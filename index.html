@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Organized: A Survival Guide for Nada 🎯</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .presentation-container {
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 60px 50px;
+            text-align: center;
+            min-height: 600px;
+            position: relative;
+            background: white;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .slide h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            color: #34495e;
+        }
+
+        .slide p, .slide li {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .slide ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            margin: 0 10px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .nav-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .nav-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .slide-counter {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .title-slide {
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: white;
+        }
+
+        .title-slide h1 {
+            color: white;
+            font-size: 3em;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .funny-note {
+            background: #f39c12;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .tip-box {
+            background: #e8f5e8;
+            border-left: 5px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #ffeaa7;
+            border-left: 5px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">12</span>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active title-slide">
+            <h1>🎯 Operation: Get Organized</h1>
+            <h2>A Survival Guide for Nada Andaloussi Dahman</h2>
+            <p style="font-size: 1.5em; margin-top: 40px;">
+                <span class="emoji">🏠</span> From Chaos to... Less Chaos! <span class="emoji">✨</span>
+            </p>
+            <div class="funny-note">
+                "Because finding last week's plate under a pile of clothes is NOT a treasure hunt!"
+            </div>
+        </div>
+
+        <!-- Slide 2: The Problem -->
+        <div class="slide">
+            <h2>🤔 The Nada Phenomenon</h2>
+            <div class="warning-box">
+                <p><strong>Symptoms include:</strong></p>
+                <ul>
+                    <li>🧹 Cleaning room on Sunday</li>
+                    <li>🌪️ Room looks like a tornado hit it by Monday</li>
+                    <li>🍽️ Ancient plates developing their own ecosystems</li>
+                    <li>🧦 Socks that have achieved independence from their pairs</li>
+                    <li>📚 Books that have formed their own library... on the floor</li>
+                </ul>
+            </div>
+            <p><em>Don't worry, you're not alone in this beautiful disaster!</em> 😅</p>
+        </div>
+
+        <!-- Slide 3: Step 1 -->
+        <div class="slide">
+            <h2>Step 1: The Great Purge 🗑️</h2>
+            <div class="tip-box">
+                <p><strong>The "Haven't Used in 6 Months" Rule:</strong></p>
+                <ul>
+                    <li>If you forgot you owned it → DONATE IT</li>
+                    <li>If it's expired food → TOSS IT (seriously, Nada!)</li>
+                    <li>If it's broken and you "might fix it someday" → BYE BYE</li>
+                    <li>If it brings you joy → KEEP IT</li>
+                </ul>
+            </div>
+            <div class="funny-note">
+                Pro tip: That collection of old food containers? Marie Kondo would cry. Let them go! 🥡
+            </div>
+        </div>
+
+        <!-- Slide 4: Step 2 -->
+        <div class="slide">
+            <h2>Step 2: Everything Needs a Home 🏠</h2>
+            <ul>
+                <li>📱 Phone charger → Always the same spot (not "somewhere")</li>
+                <li>🔑 Keys → Hook by the door (revolutionary, I know!)</li>
+                <li>🍽️ Dishes → Kitchen sink IMMEDIATELY after eating</li>
+                <li>👕 Clothes → Closet or laundry basket (floor is NOT an option)</li>
+                <li>📝 Important papers → One designated folder</li>
+            </ul>
+            <div class="funny-note">
+                Remember: "I'll put it here for now" is how chaos begins! 😂
+            </div>
+        </div>
+
+        <!-- Slide 5: Step 3 -->
+        <div class="slide">
+            <h2>Step 3: The 2-Minute Rule ⏰</h2>
+            <div class="tip-box">
+                <p><strong>If it takes less than 2 minutes, DO IT NOW:</strong></p>
+                <ul>
+                    <li>Wash that dish 🍽️</li>
+                    <li>Put clothes in hamper 👕</li>
+                    <li>Make the bed 🛏️</li>
+                    <li>File that document 📄</li>
+                    <li>Wipe that counter 🧽</li>
+                </ul>
+            </div>
+            <p>Future Nada will thank Present Nada! 🙏</p>
+        </div>
+
+        <!-- Slide 6: Step 4 -->
+        <div class="slide">
+            <h2>Step 4: The Daily 10-Minute Pickup 🏃‍♀️</h2>
+            <p>Set a timer for 10 minutes and become a cleaning ninja!</p>
+            <ul>
+                <li>🎵 Put on your favorite song</li>
+                <li>🏃‍♀️ Speed-clean like you're on a game show</li>
+                <li>📱 Put things back where they belong</li>
+                <li>🗑️ Throw away obvious trash</li>
+                <li>✨ Marvel at the transformation</li>
+            </ul>
+            <div class="funny-note">
+                It's like magic, but with more swearing when you step on something! 😤
+            </div>
+        </div>
+
+        <!-- Slide 7: Step 5 -->
+        <div class="slide">
+            <h2>Step 5: Container Queen 👑</h2>
+            <p>Become the ruler of boxes, baskets, and organizers!</p>
+            <div class="tip-box">
+                <ul>
+                    <li>📦 Small items → Small containers</li>
+                    <li>🧴 Bathroom stuff → Caddy or drawer organizers</li>
+                    <li>📚 Papers → Folders and binders</li>
+                    <li>🧦 Socks & underwear → Drawer dividers</li>
+                    <li>💄 Makeup → Clear containers (so you can see everything)</li>
+                </ul>
+            </div>
+            <p>Label everything! Your future confused self will appreciate it! 🏷️</p>
+        </div>
+
+        <!-- Slide 8: Step 6 -->
+        <div class="slide">
+            <h2>Step 6: The Kitchen Plate Rescue Mission 🍽️</h2>
+            <div class="warning-box">
+                <p><strong>New House Rules:</strong></p>
+                <ul>
+                    <li>🚫 No dishes leave the kitchen dirty</li>
+                    <li>⏰ Wash dishes within 30 minutes of eating</li>
+                    <li>🧽 Keep sink empty before bed</li>
+                    <li>🥤 One cup per person per day (not one per hour!)</li>
+                </ul>
+            </div>
+            <div class="funny-note">
+                Breaking news: Dishes don't wash themselves! Scientists are baffled! 🔬
+            </div>
+        </div>
+
+        <!-- Slide 9: Step 7 -->
+        <div class="slide">
+            <h2>Step 7: Laundry Liberation 👕</h2>
+            <p>Free your clothes from floor prison!</p>
+            <ul>
+                <li>🧺 Dirty clothes → Hamper (shocking concept!)</li>
+                <li>👔 Clean clothes → Folded and put away within 24 hours</li>
+                <li>🪑 The Chair™ is now OFF LIMITS for clothes storage</li>
+                <li>🧦 Match socks immediately after washing</li>
+                <li>👗 Hang wrinkle-prone items right away</li>
+            </ul>
+            <div class="funny-note">
+                The Chair™ knows what it did. It's been enabler for too long! 😏
+            </div>
+        </div>
+
+        <!-- Slide 10: Step 8 -->
+        <div class="slide">
+            <h2>Step 8: Digital Declutter 📱</h2>
+            <p>Your phone and computer need organizing too!</p>
+            <div class="tip-box">
+                <ul>
+                    <li>📧 Unsubscribe from email lists you never read</li>
+                    <li>📱 Delete apps you haven't used in months</li>
+                    <li>📸 Organize photos into albums</li>
+                    <li>💾 Back up important files</li>
+                    <li>🗂️ Create folders for documents</li>
+                </ul>
+            </div>
+            <p>Yes, those 47 screenshots of funny memes need a home too! 😂</p>
+        </div>
+
+        <!-- Slide 11: Step 9 -->
+        <div class="slide">
+            <h2>Step 9: The Weekly Reset 🔄</h2>
+            <p>Pick one day for your weekly organization ritual:</p>
+            <ul>
+                <li>🛏️ Change bed sheets</li>
+                <li>🧹 Do a deeper clean of one room</li>
+                <li>📋 Plan meals for the week</li>
+                <li>🗑️ Empty all trash cans</li>
+                <li>📝 Review and organize your week ahead</li>
+            </ul>
+            <div class="funny-note">
+                Sunday Reset Day: Because Monday Nada deserves to not trip over yesterday's mess! 🤸‍♀️
+            </div>
+        </div>
+
+        <!-- Slide 12: Final Slide -->
+        <div class="slide">
+            <h2>🎉 You've Got This, Nada!</h2>
+            <div class="tip-box">
+                <p><strong>Remember:</strong></p>
+                <ul>
+                    <li>🌟 Progress, not perfection</li>
+                    <li>🎯 Start with one small area</li>
+                    <li>💪 Build habits slowly</li>
+                    <li>🎊 Celebrate small wins</li>
+                    <li>😅 Laugh at the setbacks</li>
+                </ul>
+            </div>
+            <div class="funny-note">
+                "The goal isn't to never be messy again - it's to be messy in a more organized way!" 😄
+            </div>
+            <p style="font-size: 1.5em; margin-top: 40px;">
+                <span class="emoji">💝</span> With love - Your Brother Nawrasse<span class="emoji">💝</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            
+            document.getElementById('current-slide').textContent = currentSlide;
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
